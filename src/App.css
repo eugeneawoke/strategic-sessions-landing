@@ -1,0 +1,21 @@
+.App {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+main {
+  position: relative;
+}
+
+/* Smooth scroll adjustment for fixed header */
+[id] {
+  scroll-margin-top: calc(var(--header-height) + 24px);
+}
+
+/* Mobile bottom padding for fixed CTA */
+@media (max-width: 768px) {
+  main {
+    padding-bottom: 80px;
+  }
+}
