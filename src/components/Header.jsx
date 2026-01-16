@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import './Header.css'
+import { trackCtaClick } from '../utils/analytics'
+import { IconSparkle } from './Icons'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -22,10 +24,16 @@ const Header = () => {
     { href: '#faq', label: 'FAQ' },
   ]
 
-  const scrollToCalculator = () => {
+  const scrollToCalculator = (source = 'nav') => {
+    trackCtaClick(source)
     const element = document.getElementById('calculator')
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
+      // Focus first interactive element for accessibility
+      setTimeout(() => {
+        const firstInput = element.querySelector('input[type="range"]')
+        if (firstInput) firstInput.focus()
+      }, 500)
     }
     setIsMobileMenuOpen(false)
   }
@@ -40,7 +48,7 @@ const Header = () => {
       >
         <div className="header__container">
           <a href="#" className="header__logo">
-            <span className="header__logo-icon">✦</span>
+            <IconSparkle size={20} className="header__logo-icon" />
             Strategic Sessions
           </a>
 
@@ -56,7 +64,7 @@ const Header = () => {
             ))}
           </nav>
 
-          <button className="header__cta btn btn-primary" onClick={scrollToCalculator}>
+          <button className="header__cta btn btn-primary" onClick={() => scrollToCalculator('nav')}>
             Calculate Price
           </button>
 
@@ -100,7 +108,7 @@ const Header = () => {
               ))}
               <motion.button
                 className="mobile-menu__cta btn btn-primary btn-large"
-                onClick={scrollToCalculator}
+                onClick={() => scrollToCalculator('mobileMenu')}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}

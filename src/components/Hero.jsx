@@ -1,19 +1,21 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import './Hero.css'
+import { trackCtaClick } from '../utils/analytics'
+import { IconLightning, IconTarget, IconUsers, IconSparkle, IconArrowRight } from './Icons'
 
 const Hero = () => {
   const benefits = [
     {
-      icon: '⚡',
+      icon: <IconLightning size={20} className="hero__benefit-icon-svg" />,
       text: 'Clarity on direction in 1–2 weeks',
     },
     {
-      icon: '🎯',
+      icon: <IconTarget size={20} className="hero__benefit-icon-svg" />,
       text: 'Measurable goals and key metrics',
     },
     {
-      icon: '👥',
+      icon: <IconUsers size={20} className="hero__benefit-icon-svg" />,
       text: 'Team aligned with clear ownership',
     },
   ]
@@ -112,29 +114,27 @@ const Hero = () => {
           <motion.div className="hero__ctas" variants={itemVariants}>
             <button
               className="btn btn-primary btn-large hero__cta-primary"
-              onClick={() => scrollToSection('calculator')}
+              onClick={() => {
+                trackCtaClick('hero')
+                scrollToSection('calculator')
+              }}
             >
               Calculate Price
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14"/>
-                <path d="M12 5l7 7-7 7"/>
-              </svg>
+              <IconArrowRight size={16} />
             </button>
             <button
               className="btn btn-secondary btn-large"
-              onClick={() => scrollToSection('contact')}
+              onClick={() => {
+                trackCtaClick('hero_secondary')
+                scrollToSection('contact')
+              }}
             >
               Request a Consultation
             </button>
           </motion.div>
 
-          <motion.p className="hero__note" variants={itemVariants}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <line x1="12" y1="16" x2="12" y2="12"/>
-              <line x1="12" y1="8" x2="12.01" y2="8"/>
-            </svg>
-            We don't work with government institutions.
+          <motion.p className="hero__promise" variants={itemVariants}>
+            Send an estimate request. We'll confirm scope and propose the best format.
           </motion.p>
         </motion.div>
 

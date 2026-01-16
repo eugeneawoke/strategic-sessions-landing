@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import './FAQ.css'
+import { trackFaqOpen } from '../utils/analytics'
+import { IconPlus } from './Icons'
 
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null)
@@ -41,7 +43,13 @@ const FAQ = () => {
   ]
 
   const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index)
+    const isOpening = openIndex !== index
+    setOpenIndex(isOpening ? index : null)
+    
+    // Track FAQ open
+    if (isOpening) {
+      trackFaqOpen(faqs[index].question)
+    }
   }
 
   return (
@@ -88,10 +96,7 @@ const FAQ = () => {
               >
                 <span>{faq.question}</span>
                 <div className="faq-item__icon">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="12" y1="5" x2="12" y2="19"/>
-                    <line x1="5" y1="12" x2="19" y2="12"/>
-                  </svg>
+                  <IconPlus size={18} />
                 </div>
               </button>
               <AnimatePresence>

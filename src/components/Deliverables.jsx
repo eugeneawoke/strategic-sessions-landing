@@ -1,73 +1,42 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import './Deliverables.css'
+import { IconLayers, IconTarget, IconFileText, IconUsers, IconCheckCircle, IconGear, IconBarChart, IconCalendar, IconCheck } from './Icons'
 
 const Deliverables = () => {
   const deliverables = [
     {
-      icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <polygon points="12 2 2 7 12 12 22 7 12 2"/>
-          <polyline points="2 17 12 22 22 17"/>
-          <polyline points="2 12 12 17 22 12"/>
-        </svg>
-      ),
+      icon: <IconLayers size={20} />,
       title: 'Strategy or Set of Hypotheses',
       description: 'Clear strategic direction based on your context',
     },
     {
-      icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <line x1="12" y1="8" x2="12" y2="12"/>
-          <line x1="12" y1="16" x2="12.01" y2="16"/>
-        </svg>
-      ),
+      icon: <IconTarget size={20} />,
       title: 'Goals, Priorities & Metrics',
       description: 'Measurable objectives with clear success criteria',
     },
     {
-      icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-          <polyline points="14 2 14 8 20 8"/>
-          <line x1="16" y1="13" x2="8" y2="13"/>
-          <line x1="16" y1="17" x2="8" y2="17"/>
-          <line x1="10" y1="9" x2="8" y2="9"/>
-        </svg>
-      ),
+      icon: <IconFileText size={20} />,
       title: 'Roadmap & Initiatives',
       description: 'Concrete steps and timeline for execution',
     },
     {
-      icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-          <circle cx="9" cy="7" r="4"/>
-          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-        </svg>
-      ),
+      icon: <IconUsers size={20} />,
       title: 'Agreements & Ownership',
       description: 'Distributed responsibility across the team',
     },
     {
-      icon: (
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="9 11 12 14 22 4"/>
-          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-        </svg>
-      ),
+      icon: <IconCheckCircle size={20} />,
       title: 'Near-Term Action Plan',
       description: 'First 30-60-90 day implementation steps',
     },
   ]
 
   const formats = [
-    { name: 'Notion', icon: '📝' },
-    { name: 'Google Docs', icon: '📄' },
-    { name: 'Miro', icon: '🎨' },
-    { name: 'Custom', icon: '⚙️' },
+    { name: 'Notion', icon: <IconFileText size={16} /> },
+    { name: 'Google Docs', icon: <IconFileText size={16} /> },
+    { name: 'Miro', icon: <IconLayers size={16} /> },
+    { name: 'Custom', icon: <IconGear size={16} /> },
   ]
 
   return (
@@ -151,7 +120,7 @@ const Deliverables = () => {
               <div className="preview-card__content">
                 <div className="preview-card__section">
                   <div className="preview-card__section-title">
-                    <span className="preview-card__icon">📊</span>
+                    <IconBarChart size={18} className="preview-card__icon" />
                     Strategic Direction
                   </div>
                   <div className="preview-card__block preview-card__block--wide"></div>
@@ -159,27 +128,27 @@ const Deliverables = () => {
                 </div>
                 <div className="preview-card__section">
                   <div className="preview-card__section-title">
-                    <span className="preview-card__icon">🎯</span>
+                    <IconTarget size={18} className="preview-card__icon" />
                     Q1 Priorities
                   </div>
                   <div className="preview-card__items">
                     <div className="preview-card__item">
-                      <span className="preview-card__check">✓</span>
+                      <IconCheck size={14} className="preview-card__check" />
                       <div className="preview-card__block preview-card__block--line"></div>
                     </div>
                     <div className="preview-card__item">
-                      <span className="preview-card__check">✓</span>
+                      <IconCheck size={14} className="preview-card__check" />
                       <div className="preview-card__block preview-card__block--line"></div>
                     </div>
                     <div className="preview-card__item">
-                      <span className="preview-card__check">✓</span>
+                      <IconCheck size={14} className="preview-card__check" />
                       <div className="preview-card__block preview-card__block--line"></div>
                     </div>
                   </div>
                 </div>
                 <div className="preview-card__section">
                   <div className="preview-card__section-title">
-                    <span className="preview-card__icon">📅</span>
+                    <IconCalendar size={18} className="preview-card__icon" />
                     Roadmap
                   </div>
                   <div className="preview-card__timeline">
@@ -197,7 +166,7 @@ const Deliverables = () => {
                 </div>
                 <div className="preview-card__section">
                   <div className="preview-card__section-title">
-                    <span className="preview-card__icon">👥</span>
+                    <IconUsers size={18} className="preview-card__icon" />
                     Ownership Matrix
                   </div>
                   <div className="preview-card__matrix">

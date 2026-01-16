@@ -11,7 +11,7 @@
   transform: translate(-50%, -50%);
   width: 1000px;
   height: 800px;
-  background: radial-gradient(ellipse at center, rgba(233, 30, 140, 0.1) 0%, transparent 60%);
+  background: radial-gradient(ellipse at center, rgba(255, 79, 163, 0.06) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .calculator__section:hover {
-  border-color: rgba(233, 30, 140, 0.3);
+  border-color: rgba(255, 79, 163, 0.3);
 }
 
 .calculator__section-header {
@@ -185,68 +185,18 @@
   box-shadow: var(--shadow-glow);
 }
 
-/* Geography */
-.calculator__geography-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-2);
-}
-
-.calculator__geography {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-4);
-  font-family: var(--font-family);
-  font-size: var(--font-size-sm);
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  background: var(--color-bg-light);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.calculator__geography:hover {
-  border-color: var(--color-primary);
-  color: var(--color-text);
-}
-
-.calculator__geography--active {
-  color: var(--color-text);
-  background: var(--gradient-primary);
-  border-color: var(--color-primary);
-  box-shadow: var(--shadow-glow);
-}
-
-.calculator__geography-tag {
-  font-size: var(--font-size-xs);
-  font-weight: 600;
-  color: var(--color-primary-light);
-  background: rgba(233, 30, 140, 0.2);
-  padding: 2px 8px;
-  border-radius: var(--radius-full);
-}
-
-.calculator__geography--active .calculator__geography-tag {
-  color: var(--color-text);
-  background: rgba(255, 255, 255, 0.2);
-}
-
 /* Add-ons */
 .calculator__addons {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-3);
 }
 
 .calculator__addon {
   display: flex;
   align-items: flex-start;
-  gap: var(--space-4);
-  padding: var(--space-4);
+  gap: var(--space-3);
+  padding: var(--space-3);
   background: var(--color-bg-light);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -259,13 +209,13 @@
 }
 
 .calculator__addon--active {
-  background: rgba(233, 30, 140, 0.05);
+  background: rgba(255, 79, 163, 0.06);
   border-color: var(--color-primary);
 }
 
 .calculator__addon-checkbox {
-  width: 22px;
-  height: 22px;
+  width: 18px;
+  height: 18px;
   border: 2px solid var(--color-border);
   border-radius: var(--radius-sm);
   display: flex;
@@ -284,25 +234,29 @@
 
 .calculator__addon-content {
   flex: 1;
+  min-width: 0;
 }
 
 .calculator__addon-title {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   font-weight: 600;
-  margin-bottom: var(--space-1);
+  margin-bottom: 2px;
   color: var(--color-text);
+  line-height: 1.3;
 }
 
 .calculator__addon-description {
-  font-size: var(--font-size-xs);
+  font-size: 10px;
   color: var(--color-text-muted);
+  line-height: 1.3;
 }
 
 .calculator__addon-price {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-xs);
   font-weight: 600;
   color: var(--color-primary);
   flex-shrink: 0;
+  margin-top: var(--space-2);
 }
 
 /* Summary Card */
@@ -338,7 +292,7 @@
   transform: translateX(-50%);
   width: 200%;
   height: 100%;
-  background: radial-gradient(ellipse at center, rgba(233, 30, 140, 0.1) 0%, transparent 60%);
+  background: radial-gradient(ellipse at center, rgba(255, 79, 163, 0.06) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -423,7 +377,7 @@
 .calculator__input:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(233, 30, 140, 0.1);
+  box-shadow: 0 0 0 3px rgba(255, 79, 163, 0.1);
 }
 
 .calculator__input::placeholder {
@@ -447,6 +401,92 @@
   margin-top: var(--space-4);
 }
 
+.calculator__microcopy {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-top: var(--space-3);
+}
+
+/* Form validation */
+.calculator__input--error {
+  border-color: #E53E3E;
+}
+
+.calculator__error {
+  display: block;
+  font-size: 11px;
+  color: #E53E3E;
+  margin-top: 4px;
+}
+
+.calculator__error--contact {
+  margin-top: -8px;
+  margin-bottom: 8px;
+}
+
+.calculator__form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
+/* Honeypot - hidden from users */
+.calculator__honeypot {
+  position: absolute;
+  left: -9999px;
+  opacity: 0;
+  height: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+/* Success state - What happens next */
+.calculator__next-steps {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  margin-bottom: var(--space-6);
+  text-align: left;
+}
+
+.calculator__next-steps-title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+  color: var(--color-text);
+}
+
+.calculator__next-steps-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.calculator__next-steps-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+.calculator__step-number {
+  width: 24px;
+  height: 24px;
+  background: var(--gradient-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
 /* Success State */
 .calculator__success {
   max-width: 500px;
@@ -465,8 +505,8 @@
   width: 80px;
   height: 80px;
   margin: 0 auto var(--space-6);
-  background: rgba(233, 30, 140, 0.1);
-  border: 1px solid rgba(233, 30, 140, 0.3);
+  background: rgba(255, 79, 163, 0.08);
+  border: 1px solid rgba(255, 79, 163, 0.2);
   border-radius: 50%;
   color: var(--color-primary);
 }
@@ -532,7 +572,7 @@
     font-size: var(--font-size-base);
   }
 
-  .calculator__geography-grid {
+  .calculator__addons {
     grid-template-columns: 1fr;
   }
 
@@ -546,5 +586,9 @@
 
   .calculator__summary-card {
     padding: var(--space-6);
+  }
+
+  .calculator__form-row {
+    grid-template-columns: 1fr;
   }
 }

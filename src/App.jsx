@@ -6,8 +6,6 @@ import Outcomes from './components/Outcomes'
 import Deliverables from './components/Deliverables'
 import Calculator from './components/Calculator'
 import HowItWorks from './components/HowItWorks'
-import SessionThemes from './components/SessionThemes'
-import Format from './components/Format'
 import Trust from './components/Trust'
 import FAQ from './components/FAQ'
 import CTA from './components/CTA'
@@ -26,8 +24,6 @@ function App() {
         <Deliverables />
         <Calculator />
         <HowItWorks />
-        <SessionThemes />
-        <Format />
         <Trust />
         <FAQ />
         <CTA />

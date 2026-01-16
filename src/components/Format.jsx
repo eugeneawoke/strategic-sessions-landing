@@ -58,8 +58,8 @@ const Format = () => {
         </svg>
       ),
       label: 'Regions',
-      value: 'KZ, GE priority',
-      note: 'BY, RU available',
+      value: 'KZ, GE, BY, RU',
+      note: 'Online worldwide',
     },
   ]
 

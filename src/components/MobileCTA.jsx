@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import './MobileCTA.css'
+import { trackCtaClick } from '../utils/analytics'
+import { IconArrowRight } from './Icons'
 
 const MobileCTA = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -17,6 +19,7 @@ const MobileCTA = () => {
   }, [])
 
   const scrollToCalculator = () => {
+    trackCtaClick('mobileSticky')
     const element = document.getElementById('calculator')
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
@@ -38,10 +41,7 @@ const MobileCTA = () => {
             onClick={scrollToCalculator}
           >
             Calculate Price
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14"/>
-              <path d="M12 5l7 7-7 7"/>
-            </svg>
+            <IconArrowRight size={16} />
           </button>
         </motion.div>
       )}

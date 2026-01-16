@@ -1,31 +1,32 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import './Outcomes.css'
+import { IconCompass, IconLightning, IconCalendar, IconUsers, IconBarChart } from './Icons'
 
 const Outcomes = () => {
   const outcomes = [
     {
-      icon: '✓',
+      icon: <IconCompass size={24} />,
       title: 'Direction becomes clear',
       description: 'Where you\'re going and why—agreed by the entire leadership team',
     },
     {
-      icon: '⚡',
+      icon: <IconLightning size={24} />,
       title: 'Priorities and key metrics are set',
       description: 'Focus points defined with measurable success criteria',
     },
     {
-      icon: '🗓️',
+      icon: <IconCalendar size={24} />,
       title: 'Delayed decisions get made',
       description: 'Blockers resolved, hard choices addressed together',
     },
     {
-      icon: '👥',
+      icon: <IconUsers size={24} />,
       title: 'Roles and ownership are clarified',
       description: 'Everyone knows who is responsible for what',
     },
     {
-      icon: '📈',
+      icon: <IconBarChart size={24} />,
       title: 'Chaos decreases, manageability increases',
       description: 'Structured approach replaces reactive firefighting',
     },

@@ -1,9 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import './CTA.css'
+import { trackCtaClick } from '../utils/analytics'
+import { IconArrowRight } from './Icons'
 
 const CTA = () => {
-  const scrollToSection = (id) => {
+  const scrollToSection = (id, source) => {
+    trackCtaClick(source)
     const element = document.getElementById(id)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
@@ -33,17 +36,17 @@ const CTA = () => {
           <div className="cta__buttons">
             <button
               className="btn btn-primary btn-large"
-              onClick={() => scrollToSection('calculator')}
+              onClick={() => scrollToSection('calculator', 'finalCta')}
             >
               Calculate Price
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14"/>
-                <path d="M12 5l7 7-7 7"/>
-              </svg>
+              <IconArrowRight size={16} />
             </button>
             <button
               className="btn btn-secondary btn-large"
-              onClick={() => window.location.href = 'mailto:hello@strategicsessions.com'}
+              onClick={() => {
+                trackCtaClick('finalCta_secondary')
+                window.location.href = 'mailto:hello@strategicsessions.com'
+              }}
             >
               Request a Consultation
             </button>

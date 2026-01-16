@@ -1,50 +1,27 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import './Trust.css'
+import { IconCheckCircle, IconUsers, IconFileText, IconCheck, IconShield } from './Icons'
 
 const Trust = () => {
   const principles = [
     {
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-          <polyline points="22 4 12 14.01 9 11.01"/>
-        </svg>
-      ),
+      icon: <IconCheckCircle size={24} />,
       title: 'Outcome-Driven',
       description: 'We focus on tangible results, not just facilitation. Every session ends with documented decisions and next steps.',
     },
     {
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-          <circle cx="9" cy="7" r="4"/>
-          <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-        </svg>
-      ),
+      icon: <IconUsers size={24} />,
       title: 'Expert Facilitation',
       description: 'Neutral, structured guidance that helps your team reach alignment without getting stuck in debates.',
     },
     {
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-          <polyline points="14 2 14 8 20 8"/>
-          <line x1="16" y1="13" x2="8" y2="13"/>
-          <line x1="16" y1="17" x2="8" y2="17"/>
-        </svg>
-      ),
+      icon: <IconFileText size={24} />,
       title: 'Clear Artifacts',
       description: 'Comprehensive documentation in your preferred format—Notion, Google Docs, Miro, or custom.',
     },
     {
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="9 11 12 14 22 4"/>
-          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
-        </svg>
-      ),
+      icon: <IconCheck size={24} />,
       title: 'Ownership Built-In',
       description: 'Every decision and action item has a clear owner. Your team leaves ready to execute.',
     },
@@ -144,10 +121,7 @@ const Trust = () => {
                 transition={{ delay: index * 0.05 }}
                 whileHover={{ x: 4 }}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                  <polyline points="14 2 14 8 20 8"/>
-                </svg>
+                <IconFileText size={16} />
                 <span>{item}</span>
               </motion.div>
             ))}
@@ -162,9 +136,7 @@ const Trust = () => {
           transition={{ duration: 0.6 }}
         >
           <div className="trust__guarantee-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
+            <IconShield size={24} />
           </div>
           <div className="trust__guarantee-content">
             <h4 className="trust__guarantee-title">Our Commitment</h4>

@@ -1,11 +1,12 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import './WhenNeeded.css'
+import { IconTarget, IconRefresh, IconTrendUp } from './Icons'
 
 const WhenNeeded = () => {
   const triggers = [
     {
-      icon: '🎯',
+      icon: <IconTarget size={28} />,
       title: 'Too Many Initiatives, Too Little Outcome',
       symptoms: [
         'Focus is blurry across the company',
@@ -14,7 +15,7 @@ const WhenNeeded = () => {
       ],
     },
     {
-      icon: '🔄',
+      icon: <IconRefresh size={28} />,
       title: 'Leadership Misalignment',
       symptoms: [
         'Team and leadership not synchronized',
@@ -23,7 +24,7 @@ const WhenNeeded = () => {
       ],
     },
     {
-      icon: '📉',
+      icon: <IconTrendUp size={28} />,
       title: 'Business Stagnation',
       symptoms: [
         'Old solutions no longer work',
