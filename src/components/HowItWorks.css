@@ -53,30 +53,58 @@
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;
+  width: 56px;
 }
 
 .timeline-step__number {
   width: 56px;
   height: 56px;
-  background: var(--gradient-primary);
-  color: var(--color-text);
-  border-radius: 50%;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--font-size-base);
-  font-weight: 700;
   flex-shrink: 0;
-  box-shadow: var(--shadow-glow);
-  position: relative;
   z-index: 1;
 }
 
-.timeline-step__line {
+.timeline-step__number-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  box-shadow: var(--shadow-glow);
+}
+
+.timeline-step__number-text {
+  position: relative;
+  z-index: 1;
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: white;
+}
+
+.timeline-step__line-wrapper {
+  position: relative;
   width: 2px;
   flex: 1;
-  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-border) 100%);
   min-height: 40px;
+}
+
+.timeline-step__line-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-border);
+}
+
+.timeline-step__line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
 }
 
 .timeline-step__content {
@@ -88,6 +116,8 @@
   padding: var(--space-6);
   margin-bottom: var(--space-4);
   transition: all var(--transition-base);
+  /* Center content vertically with the step number */
+  margin-top: -4px;
 }
 
 .timeline-step__content:hover {
@@ -131,32 +161,6 @@
   line-height: 1.6;
 }
 
-/* Note */
-.how-it-works__note {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-3);
-  margin-top: var(--space-12);
-  padding: var(--space-5) var(--space-6);
-  background: var(--color-bg-card);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.how-it-works__note svg {
-  color: var(--color-primary);
-  flex-shrink: 0;
-}
-
-.how-it-works__note span {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .how-it-works__title {
@@ -171,9 +175,16 @@
     gap: var(--space-4);
   }
 
+  .timeline-step__connector {
+    width: 44px;
+  }
+
   .timeline-step__number {
     width: 44px;
     height: 44px;
+  }
+
+  .timeline-step__number-text {
     font-size: var(--font-size-sm);
   }
 
@@ -188,11 +199,6 @@
 
   .timeline-step__content {
     padding: var(--space-5);
-  }
-
-  .how-it-works__note {
-    flex-direction: column;
-    text-align: center;
-    gap: var(--space-2);
+    margin-top: -2px;
   }
 }
