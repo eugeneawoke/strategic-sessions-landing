@@ -6,27 +6,27 @@ import { IconCompass, IconLightning, IconCalendar, IconUsers, IconBarChart } fro
 const Outcomes = () => {
   const outcomes = [
     {
-      icon: <IconCompass size={24} />,
+      icon: <IconCompass size={22} />,
       title: 'Direction becomes clear',
       description: 'Where you\'re going and why—agreed by the entire leadership team',
     },
     {
-      icon: <IconLightning size={24} />,
+      icon: <IconLightning size={22} />,
       title: 'Priorities and key metrics are set',
       description: 'Focus points defined with measurable success criteria',
     },
     {
-      icon: <IconCalendar size={24} />,
+      icon: <IconCalendar size={22} />,
       title: 'Delayed decisions get made',
       description: 'Blockers resolved, hard choices addressed together',
     },
     {
-      icon: <IconUsers size={24} />,
+      icon: <IconUsers size={22} />,
       title: 'Roles and ownership are clarified',
       description: 'Everyone knows who is responsible for what',
     },
     {
-      icon: <IconBarChart size={24} />,
+      icon: <IconBarChart size={22} />,
       title: 'Chaos decreases, manageability increases',
       description: 'Structured approach replaces reactive firefighting',
     },

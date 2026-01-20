@@ -65,6 +65,15 @@
   --space-20: 5rem;
   --space-24: 6rem;
   --space-32: 8rem;
+
+  /* Spacing scale (8px base) */
+  --s-1: 8px;
+  --s-1_5: 12px;
+  --s-2: 16px;
+  --s-3: 24px;
+  --s-4: 32px;
+  --s-6: 48px;
+  --s-8: 64px;
   
   /* Layout */
   --max-width: 1200px;
@@ -83,6 +92,11 @@
   --radius-lg: 16px;
   --radius-xl: 24px;
   --radius-full: 9999px;
+
+  /* Radius tokens */
+  --r-2: 12px;
+  --r-3: 16px;
+  --r-4: 20px;
   
   /* Transitions */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
