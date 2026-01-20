@@ -36,7 +36,7 @@
 .deliverables__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-16);
+  gap: var(--space-12);
   align-items: start;
 }
 
@@ -91,7 +91,7 @@
   color: var(--color-text-secondary);
 }
 
-/* Formats */
+/* Formats - Now inside the content area, aligned with preview */
 .deliverables__formats {
   margin-top: var(--space-6);
   padding-top: var(--space-6);
@@ -320,6 +320,10 @@
     max-width: 500px;
     margin: 0 auto;
   }
+
+  .deliverables__formats {
+    max-width: 500px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -333,5 +337,14 @@
 
   .deliverable-item {
     padding: var(--space-4);
+  }
+
+  .deliverables__formats-list {
+    gap: var(--space-2);
+  }
+
+  .deliverables__format {
+    font-size: var(--font-size-xs);
+    padding: var(--space-1) var(--space-3);
   }
 }
